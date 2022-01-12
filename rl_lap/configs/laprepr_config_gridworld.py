@@ -12,7 +12,7 @@ class Config(laprepr.LapReprConfig):
         flags.n_samples = 30000
         flags.batch_size = 128
         flags.discount = 0.9
-        flags.w_neg = 1.0
+        flags.w_neg = 5.0
         flags.c_neg = 1.0
         flags.reg_neg = 0.0
         flags.replay_buffer_size = 100000
@@ -20,7 +20,7 @@ class Config(laprepr.LapReprConfig):
         flags.opt_args.lr = 0.001
         # train
         flags.log_dir = '/tmp/rl_laprepr/log'
-        flags.total_train_steps = 30000
+        flags.total_train_steps = 100000
         flags.print_freq = 1000
         flags.save_freq = 10000
 

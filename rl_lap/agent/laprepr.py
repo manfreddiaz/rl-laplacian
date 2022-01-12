@@ -16,7 +16,12 @@ from ..tools import timer_tools
 
 
 def l2_dist(x1, x2):
-    return (x1 - x2).pow(2).sum(-1)
+    d = x1.shape[1]
+    y = (x1 - x2).pow(2)
+    c = torch.arange(d, 0, -1, device=y.device).unsqueeze_(0)
+    y = y * c
+    return y.sum(-1)
+    # return (x1 - x2).pow(2).sum(-1)
 
 
 def pos_loss(x1, x2):
